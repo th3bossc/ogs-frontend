@@ -1,0 +1,16 @@
+.text {
+    position: relative;
+    padding: 0 0.5rem;
+
+}
+
+.text::before {
+    content: '';
+    padding: 0.5rem 0;
+    height: 100%;
+    width: 0.5rem;
+    background-color: #FFE57D;
+    position: absolute;
+    top: 0;
+    left: -0.5rem;
+}

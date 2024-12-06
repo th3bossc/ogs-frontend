@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { stagger, useAnimate } from "framer-motion";
 import { mergeClassName } from "@/lib/utils";
 import RenderWords from "./RenderWords";
+import { useInView } from "react-intersection-observer";
 
 
 const TextGenerate = ({
@@ -18,7 +19,9 @@ const TextGenerate = ({
 }) => {
     const [scope, animate] = useAnimate();
     const wordsArray = words.split(" ");
+    const { ref, inView } = useInView({ threshold: 0.9, triggerOnce: true })
     useEffect(() => {
+        if (!inView) return;
         animate(
             "span",
             {
@@ -31,12 +34,12 @@ const TextGenerate = ({
             }
         );
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [scope.current]);
+    }, [inView]);
 
 
 
     return (
-        <div className={mergeClassName("font-bold", className)}>
+        <div className={mergeClassName("font-bold", className)} ref={ref}>
             <div className="mt-4">
                 <div className=" dark:text-white text-black leading-snug tracking-wide">
                     <RenderWords
