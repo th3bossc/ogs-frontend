@@ -83,7 +83,7 @@ export default function Home() {
           <TextGenerate words="What we have brought for you" />
         </h1>
       </div>
-      <section className="mt-10 min-h-screen h-full w-full flex items-center justify-center gap-12 flex-col font-semibold text-2xl lg:text-9xl">
+      <section className="mt-10 h-[50dvh] md:h-screen w-full flex items-center justify-center gap-12 flex-col font-semibold text-2xl lg:text-9xl">
         <Marquee
           gradient={false}
           autoFill
@@ -112,8 +112,8 @@ export default function Home() {
         </Marquee>
       </section>
 
-      <section id="fests" className="px-5 md:px-12 lg:px-24 h-full min-h-screen">
-        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12"> FESTS OF NITC </HighLightText>
+      <section id="fests" className="px-4 py-12 lg:p-24 h-full min-h-screen">
+        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12 mx-4"> FESTS OF NITC </HighLightText>
         <div className="w-full flex items-center justify-center flex-col gap-4">
           {
             dummyFestData.map((cardProps, index) => (
@@ -123,9 +123,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="upcoming-events" className="px-5 md:px-12 lg:px-24 h-full min-h-screen">
-        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12"> UPCOMING EVENTS </HighLightText>
-        <div className="w-full grid grid-cols-3 place-items-center">
+      <section id="upcoming-events" className="px-4 py-12 lg:p-24 h-full min-h-screen">
+        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12 mx-4"> UPCOMING EVENTS </HighLightText>
+        <div className="w-full flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 place-items-center gap-32 md:gap-x-0">
           {
             dummyEventsData.map((cardProps, index) => (
               <VerticalCard key={index} {...cardProps} />
@@ -134,9 +134,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="tracking" className="px-5 md:px-12 lg:px-24 h-full min-h-screen">
-        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12"> TRACK NOW </HighLightText>
-        <div className="w-full grid grid-cols-2 place-items-center">
+      <section id="tracking" className="px-4 py-12 lg:p-24 h-full min-h-screen">
+        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12 mx-4"> TRACK NOW </HighLightText>
+        <div className="w-full flex flex-col md:grid grid-cols-2 place-items-center">
           {
             dummyTrackData.map((cardProps, index) => (
               <TrackCard key={index} {...cardProps} />

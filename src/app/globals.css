@@ -15,3 +15,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
+
+* {
+  -webkit-user-drag: none;
+}

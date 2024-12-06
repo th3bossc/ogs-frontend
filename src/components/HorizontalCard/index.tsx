@@ -31,8 +31,8 @@ const HorizontalCard = ({
                 transition: { duration: 0.3 },
             }}
         >
-            <div className="w-full h-full min-h-[300px] overflow-hidden relative">
-                <img src={imageUrl} className="absolute -bottom-4 lg:-bottom-8 -left-4 lg:-left-8 rounded-[35px] bg-black h-full w-full" />
+            <div className="w-3/5 md:w-full h-full min-h-[300px] overflow-hidden relative">
+                <img src={imageUrl} className="absolute -bottom-4 lg:-bottom-8 -left-4 lg:-left-8 rounded-[35px] bg-black h-full w-full object-cover" />
             </div>
             <div className="w-full h-full min-h-[300px] flex flex-col items-start justify-center gap-2">
                 <span className={`${supplyBold.className} font-medium text-xl lg:text-2xl`}> {title} </span>
