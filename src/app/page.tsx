@@ -1,17 +1,19 @@
 "use client";
 
-import Card, { CardProps } from "@/components/Card";
+import HorizontalCard, { HorizontalCardProps } from "@/components/HorizontalCard";
 import Hero from "@/components/Hero";
 import HighLightText from "@/components/HighLightText";
 import TextGenerate from "@/components/TextGenerate";
 import { useMemo } from "react";
 import Marquee from "react-fast-marquee";
+import VerticalCard, { VerticalCardProps } from "@/components/VerticalCard";
+import TrackCard, { TrackCardProps } from "@/components/TrackCard";
 
 export default function Home() {
 
-  const dummyFestData: CardProps[] = useMemo((): CardProps[] => [
+  const dummyFestData: HorizontalCardProps[] = useMemo((): HorizontalCardProps[] => [
     {
-      imageUrl: '/ragam-image.png',
+      imageUrl: '/tmp/ragam-image.png',
       title: "RAGAM '25",
       content: "Biggest Tech Fest in South India",
       buttonProps: {
@@ -21,7 +23,7 @@ export default function Home() {
       }
     },
     {
-      imageUrl: '/tathva-image.png',
+      imageUrl: '/tmp/tathva-image.png',
       title: "TATHVA '24",
       content: "Biggest Tech Fest in South India",
       buttonProps: {
@@ -30,6 +32,40 @@ export default function Home() {
         openLinkInNewTab: true,
       }
     },
+  ], []);
+
+
+  const dummyEventsData: VerticalCardProps[] = useMemo((): VerticalCardProps[] => [
+    {
+      imageUrl: '/tmp/iedc-image.png',
+      title: "IEDC SUMMIT",
+      subtitle: "NIT CALICUT",
+      extraInfo: "19th Oct 2024",
+    },
+    {
+      imageUrl: '/tmp/adizya-image.png',
+      title: "ADIZYA 24",
+      subtitle: "NIT CALICUT",
+      extraInfo: "25, 26, 27th Oct 2024",
+    },
+    {
+      imageUrl: "/tmp/iedc-enq-image.png",
+      title: "SCI-BIZ-TECH college Quiz",
+      subtitle: "19th Oct 2024",
+    }
+  ], []);
+
+  const dummyTrackData: TrackCardProps[] = useMemo((): TrackCardProps[] => [
+    {
+      icon: '/school-bus-side.png',
+      title: "Bus Tracking",
+      link: "#",
+    },
+    {
+      icon: "/city-hall.png",
+      title: "Campus Tracking",
+      link: "#",
+    }
   ], []);
 
 
@@ -77,21 +113,37 @@ export default function Home() {
       </section>
 
       <section id="fests" className="px-5 md:px-12 lg:px-24 h-full min-h-screen">
-        <HighLightText className="w-full text-lg md:text-4xl my-4 lg:my-8"> FESTS OF NITC </HighLightText>
+        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12"> FESTS OF NITC </HighLightText>
         <div className="w-full flex items-center justify-center flex-col gap-4">
           {
             dummyFestData.map((cardProps, index) => (
-              <Card key={index} {...cardProps} />
+              <HorizontalCard key={index} {...cardProps} />
             ))
           }
         </div>
       </section>
 
       <section id="upcoming-events" className="px-5 md:px-12 lg:px-24 h-full min-h-screen">
-        <HighLightText className="w-full text-lg md:text-4xl my-4 lg:my-8"> UPCOMING EVENTS </HighLightText>
-        <div className="w-full grid">
-
+        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12"> UPCOMING EVENTS </HighLightText>
+        <div className="w-full grid grid-cols-3 place-items-center">
+          {
+            dummyEventsData.map((cardProps, index) => (
+              <VerticalCard key={index} {...cardProps} />
+            ))
+          }
         </div>
+      </section>
+
+      <section id="tracking" className="px-5 md:px-12 lg:px-24 h-full min-h-screen">
+        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12"> TRACK NOW </HighLightText>
+        <div className="w-full grid grid-cols-2 place-items-center">
+          {
+            dummyTrackData.map((cardProps, index) => (
+              <TrackCard key={index} {...cardProps} />
+            ))
+          }
+        </div>
+
       </section>
     </div>
   );
