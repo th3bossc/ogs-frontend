@@ -47,7 +47,7 @@ const Navbar = () => {
     }, [router]);
 
     return (
-        <nav className="w-full h-20 fixed top-0 left-0 flex items-center justify-center">
+        <nav className="w-full h-20 flex items-center justify-center">
             <div className="flex items-center justify-center gap-4">
                 {
                     items.map((item, index) => (
