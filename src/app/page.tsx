@@ -1,150 +1,58 @@
 "use client";
 
-import HorizontalCard, { HorizontalCardProps } from "@/components/HorizontalCard";
-import Hero from "@/components/Hero";
-import HighLightText from "@/components/HighLightText";
-import TextGenerate from "@/components/TextGenerate";
+import Container from "@/components/Container";
+import Section from "@/components/Section";
+import { outfit } from "@/fonts";
+import Image from "next/image";
 import { useMemo } from "react";
-import Marquee from "react-fast-marquee";
-import VerticalCard, { VerticalCardProps } from "@/components/VerticalCard";
-import TrackCard, { TrackCardProps } from "@/components/TrackCard";
 
 export default function Home() {
 
-  const dummyFestData: HorizontalCardProps[] = useMemo((): HorizontalCardProps[] => [
+  const heroSectionLInks = useMemo(() => [
     {
-      imageUrl: '/tmp/ragam-image.png',
-      title: "RAGAM '25",
-      content: "Biggest Tech Fest in South India",
-      buttonProps: {
-        text: "Visit Now",
-        href: "https://ragam.co.in",
-        openLinkInNewTab: true,
-      }
+      name: "EVENT UPDATES",
+      image: "/hero-section/event-updates.png",
+      url: "#",
+      bgColor: "bg-[#0793FF38]",
     },
     {
-      imageUrl: '/tmp/tathva-image.png',
-      title: "TATHVA '24",
-      content: "Biggest Tech Fest in South India",
-      buttonProps: {
-        text: "Visit Now",
-        href: "https://tathva.org",
-        openLinkInNewTab: true,
-      }
+      name: "BUS TRACKING",
+      image: "/hero-section/bus-tracking.png",
+      url: "#",
+      bgColor: "bg-[#1A265A80]",
+    },
+    {
+      name: "CAMPUS TRACKING",
+      image: "/hero-section/compus-tracking.png",
+      url: "#",
+      bgColor: "bg-[#CE8B8B66]",
     },
   ], []);
-
-
-  const dummyEventsData: VerticalCardProps[] = useMemo((): VerticalCardProps[] => [
-    {
-      imageUrl: '/tmp/iedc-image.png',
-      title: "IEDC SUMMIT",
-      subtitle: "NIT CALICUT",
-      extraInfo: "19th Oct 2024",
-    },
-    {
-      imageUrl: '/tmp/adizya-image.png',
-      title: "ADIZYA 24",
-      subtitle: "NIT CALICUT",
-      extraInfo: "25, 26, 27th Oct 2024",
-    },
-    {
-      imageUrl: "/tmp/iedc-enq-image.png",
-      title: "SCI-BIZ-TECH college Quiz",
-      subtitle: "19th Oct 2024",
-    }
-  ], []);
-
-  const dummyTrackData: TrackCardProps[] = useMemo((): TrackCardProps[] => [
-    {
-      icon: '/school-bus-side.png',
-      title: "Bus Tracking",
-      link: "#",
-    },
-    {
-      icon: "/city-hall.png",
-      title: "Campus Tracking",
-      link: "#",
-    }
-  ], []);
-
 
 
   return (
-    <div className="h-full min-h-screen w-full">
-      <section className="h-full min-h-screen flex flex-col items-center justify-center px-10 lg:p-0 mb-10">
-        <Hero />
-        <HighLightText className="w-full lg:w-3/4">
-          Fly high with us! Tathva&apos;24 is calling all drone enthusiasts to take part in the exciting &apos;Drone Racing&apos; event. Experience the thrill of racing through the sky, navigating tough turns, and speeding through tight spaces. Register now for a fast-paced adventure filled with excitement and high-energy action!
-        </HighLightText>
-      </section>
-      <div className="h-12 lg:h-48 w-full flex items-center justify-center">
-        <h1 className="text-xl md:4xl lg:text-6xl font-medium text-center ">
-          <TextGenerate words="What we have brought for you" />
-        </h1>
-      </div>
-      <section className="mt-10 h-[50dvh] md:h-screen w-full flex items-center justify-center gap-12 flex-col font-semibold text-2xl lg:text-9xl">
-        <Marquee
-          gradient={false}
-          autoFill
-          speed={50}
-          className="overflow-hidden"
-        >
-          UPDATES ABOUT EVENTS &nbsp; &nbsp; &nbsp;
-        </Marquee>
-
-        <Marquee
-          gradient={false}
-          speed={80}
-          autoFill
-          className="overflow-hidden"
-        >
-          FACILITIES NEAR YOU &nbsp; &nbsp; &nbsp;
-        </Marquee>
-
-        <Marquee
-          gradient={false}
-          speed={110}
-          autoFill
-          className="overflow-hidden"
-        >
-          CAMPUS TRACKING &nbsp; &nbsp; &nbsp;
-        </Marquee>
-      </section>
-
-      <section id="fests" className="px-4 py-12 lg:p-24 h-full min-h-screen">
-        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12 mx-4"> FESTS OF NITC </HighLightText>
-        <div className="w-full flex items-center justify-center flex-col gap-4">
-          {
-            dummyFestData.map((cardProps, index) => (
-              <HorizontalCard key={index} {...cardProps} />
-            ))
-          }
+    <Container>
+      <Section>
+        <div className="h-screen w-full flex items-center justify-center gap-4">
+          <div className="w-full lg:w-4/6 h-full flex items-center justify-center rounded-xl">
+            <h2 className={`${outfit.className} font-semibold text-5xl lg:text-7xl`}> OWN GUIDE SYSTEM </h2>
+          </div>
+          <div className="p-4 hidden lg:flex w-2/6 gap-4 h-full flex-col items-center justify-center">
+            {
+              heroSectionLInks.map((data, index) => (
+                <div key={index} className={`h-full w-full relative flex items-center justify-center rounded-xl group ${data.bgColor}`}>
+                  <a className="bg-transparent w-full h-full" href={data.url}>
+                    <h3 className={`${outfit.className} font-semibold text-2xl lg:text-4xl w-full h-full flex items-center justify-center bg-black/40 group-hover:bg-white/75 group-hover:text-black rounded-xl`}> {data.name} </h3>
+                    <div className="absolute top-0 left-0 w-full h-full z-[-1] flex items-center justify-center bg-transparent">
+                      <Image src={data.image} alt={data.name} height={250} width={250} className="object-fit-cover" />
+                    </div>
+                  </a>
+                </div>
+              ))
+            }
+          </div>
         </div>
-      </section>
-
-      <section id="upcoming-events" className="px-4 py-12 lg:p-24 h-full min-h-screen">
-        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12 mx-4"> UPCOMING EVENTS </HighLightText>
-        <div className="w-full flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 place-items-center gap-32 md:gap-x-0">
-          {
-            dummyEventsData.map((cardProps, index) => (
-              <VerticalCard key={index} {...cardProps} />
-            ))
-          }
-        </div>
-      </section>
-
-      <section id="tracking" className="px-4 py-12 lg:p-24 h-full min-h-screen">
-        <HighLightText className="w-full text-lg md:text-4xl mb-4 lg:mb-12 mx-4"> TRACK NOW </HighLightText>
-        <div className="w-full flex flex-col md:grid grid-cols-2 place-items-center">
-          {
-            dummyTrackData.map((cardProps, index) => (
-              <TrackCard key={index} {...cardProps} />
-            ))
-          }
-        </div>
-
-      </section>
-    </div>
+      </Section>
+    </Container>
   );
 }
