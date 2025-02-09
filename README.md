@@ -162,16 +162,4 @@ export default EgComponent;
 ```
 
 ## Authors
-- B21s
-    - [Diljith P D](https://github.com/th3bossc/)
-    - [Mayank Gupta](https://github.com/71203mayank)
-- B22s
-    - [Jaefar Shameem](https://github.com/jaefarnc)
-    - [Nandana Anand](https://github.com/Nandana-Neo)
-    - [Naila Fathima](https://github.com/NailaFathima)
-    - [Vaishnavi Pai](https://github.com/orgs/athena-server/people/Vaishnavi-Pai19)
-    - [Harshini Babu](https://github.com/orgs/athena-server/people/harshfromnow)
-- B23s
-    - [Mihir P A](https://github.com/orgs/athena-server/people/mihirpa18)
-    - [Lishin V S](https://github.com/Ellvius)
-    - [Anirudh N Kamath](https://github.com/anirudhnkamath)
+- [Diljith P D](https://github.com/th3bossc/)
