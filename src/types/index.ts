@@ -1,7 +1,7 @@
 export interface Event {
     title: string,
     description: string,
-    venue: Venue,
+    venue?: Venue,
     time: string,
     date: Date,
     image?: string,
@@ -23,7 +23,7 @@ export interface Notification {
 
 export interface Workshop {
     title: string,
-    venue: Venue,
+    venue?: Venue,
     time: string,
     date: Date,
     image?: string,

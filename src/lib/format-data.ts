@@ -49,7 +49,9 @@ export const formatWorkshop = (workshop: WorkshopData): Workshop => {
     })
 }
 
-export const formatVenue = (venue: VenueData): Venue => {
+export const formatVenue = (venue?: VenueData): Venue | undefined => {
+    if (!venue)
+        return undefined;
     return ({
         name: venue.name,
         image: formatImage(venue.image),
@@ -61,7 +63,7 @@ export const formatVenue = (venue: VenueData): Venue => {
 
 export const formatImage = (image?: ImageData): string | undefined => {
     if (!image)
-        return image;
+        return undefined;
     return backendUrl + image.url
 }
 

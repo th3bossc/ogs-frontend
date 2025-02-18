@@ -10,12 +10,15 @@ import Title from "@/components/Title";
 import { outfit, vegawanty } from "@/fonts";
 // import {} from "@/lib/dummy-data"
 import { getEvents } from "@/lib/events";
+import { getVenues } from "@/lib/venues";
+import { Venue } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { use, useEffect, useMemo, useState } from "react";
 
 export default function Home() {
   const [showAll, setShowAll] = useState<boolean>(false);
+  const [venues, setVenues] = useState<Venue[]>([]) 
 
   const heroSectionLInks = useMemo(
     () => [
@@ -50,8 +53,19 @@ export default function Home() {
     []
   );
 
+  useEffect(() => {
+    const getAllVenues = async () => {
+      const venues = await getVenues();
+      setVenues(venues);
+    }
+
+
+    getAllVenues()
+  }, [])
+
   return (
     <Container>
+      <div className="mt-8"></div>
       <Section>
         <Title title="Event Updates" />
         <CarouselHero />
@@ -62,11 +76,10 @@ export default function Home() {
       <Section>
         <div className="flex justify-between">
           <Title title="Venues" />
-          <ButtonDate date="22 Feb" />
         </div>
-        {/* {venues.slice(0, showAll ? venues.length : 1).map((venue, idx) => (
-          <VenueCard key={idx} name={venue.name} image={venue.image} />
-        ))} */}
+        {venues.slice(0, showAll ? venues.length : 1).map((venue, idx) => (
+          <VenueCard key={idx} name={venue.name} image={venue.image || "#"} />
+        ))}
         <div className="flex justify-center -translate-y-4">
           <button
             className={`h-10 w-10 rounded-full bg-white text-black ${
@@ -88,7 +101,7 @@ export default function Home() {
             see more
           </Link>
         </div>
-        <div  >
+        <div>
           <CarouselAd />
         </div>
       </Section>
