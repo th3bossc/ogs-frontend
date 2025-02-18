@@ -1,5 +1,5 @@
-import { EventUpdate } from "@/types";
-import { eventUpdates } from "./dummy-data"
+import { Event } from "@/types";
+import { getEvents } from "./events";
 
 
 /**
@@ -10,6 +10,9 @@ import { eventUpdates } from "./dummy-data"
  * @example 
  * const eventUpdates = await getEventUpdates()
  */
-export const getEventUpdates = async (): Promise<EventUpdate[]> => {
-    return eventUpdates;
+export const getEventUpdates = async (): Promise<Event[]> => {
+    const events = await getEvents();
+
+    return events.filter(event => event.priority)
+
 }

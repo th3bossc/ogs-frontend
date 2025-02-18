@@ -3,8 +3,9 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { outfit, vegawanty } from "@/fonts";
+import { getEvents } from "@/lib/events";
 import Image from "next/image";
-import { useMemo } from "react";
+import { use, useEffect, useMemo } from "react";
 
 export default function Home() {
 
@@ -34,7 +35,6 @@ export default function Home() {
       brief: "Track your campus in an easy way",
     },
   ], []);
-
 
   return (
     <Container>
