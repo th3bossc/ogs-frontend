@@ -8,10 +8,11 @@ import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Title from "@/components/Title";
 import { outfit, vegawanty } from "@/fonts";
-import { venues } from "@/lib/dummy-data";
+// import {} from "@/lib/dummy-data"
+import { getEvents } from "@/lib/events";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { use, useEffect, useMemo, useState } from "react";
 
 export default function Home() {
   const [showAll, setShowAll] = useState<boolean>(false);
@@ -63,9 +64,9 @@ export default function Home() {
           <Title title="Venues" />
           <ButtonDate date="22 Feb" />
         </div>
-        {venues.slice(0, showAll ? venues.length : 1).map((venue, idx) => (
+        {/* {venues.slice(0, showAll ? venues.length : 1).map((venue, idx) => (
           <VenueCard key={idx} name={venue.name} image={venue.image} />
-        ))}
+        ))} */}
         <div className="flex justify-center -translate-y-4">
           <button
             className={`h-10 w-10 rounded-full bg-white text-black ${

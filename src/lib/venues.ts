@@ -1,25 +1,21 @@
-import { Venue } from "@/types";
-import { venues } from "./dummy-data"
+import axios from 'axios'
 import { getEvents } from "./events";
-
+import { backendUrl } from '@/env';
+import { formatVenues } from './format-data';
+import { Venue, VenueData } from '@/types';
 
 /**
  * Get venue details from db
- * @param {boolean} populateEvents - optional attribute to attach event details to each venue
  * @returns {Venue[]} Returns all the venues
  * 
  * 
  * @example
  * const venues = await getVenues();
  */
-export const getVenues = async (populateEvents?: boolean): Promise<Venue[]> => {
-    if (populateEvents) {
-        return await Promise.all(venues.map(async venue => ({
-            ...venue,
-            events: await getEvents(venue),
-        })))
-    }
-    else {
-        return venues;
-    }
+export const getVenues = async (): Promise<Venue[]> => {
+    const venues = await axios.get<{
+        data: VenueData[]
+    }>(`${backendUrl}/api/venues`)
+    const formattedVenueData = formatVenues(venues.data.data)
+    return formattedVenueData;
 }
