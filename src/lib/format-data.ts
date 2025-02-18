@@ -54,7 +54,8 @@ export const formatVenue = (venue: VenueData): Venue => {
         name: venue.name,
         image: formatImage(venue.image),
         events: formatEvents(venue.events),
-        location: venue.location
+        location: venue.location,
+        description: venue.description,
     })
 }
 

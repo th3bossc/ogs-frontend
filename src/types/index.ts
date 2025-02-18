@@ -13,6 +13,7 @@ export interface Venue {
     image?: string,
     events?: Event[],
     location: string,
+    description: string,
 }
 
 export interface Notification {
@@ -36,6 +37,7 @@ export interface VenueData {
     image?: ImageData,
     events?: EventData[],
     location: string,
+    description: string,
 }
 
 export interface ImageData {
