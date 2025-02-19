@@ -1,5 +1,5 @@
 "use client";
-/*
+
 import ButtonDate from "@/components/Button/ButtonDate";
 import VenueCard from "@/components/Card/VenueCard";
 import CarouselAd from "@/components/Carousel/CarouselAd";
@@ -108,14 +108,3 @@ export default function Home() {
     </Container>
   );
 }
-*/
-import React from 'react';
-import PortraitCard from "@/components/Card/PortraitCard";
-
-const page = () => {
-  return (
-    <PortraitCard/>
-  )
-}
-
-export default page
