@@ -11,29 +11,33 @@ const Footer = () => {
       <div>
         <Title title="ABOUT US" />
         <p className="pl-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-          aliquid beatae et hic, saepe nulla non tempora. Eos doloremque omnis
-          maxime. Vitae, reiciendis mollitia nobis delectus magnam possimus
-          distinctio labore. Laudantium cupiditate quisquam id veniam inventore,
-          praesentium doloremque, in sit omnis consequuntur molestias. Minima,
-          tempore unde. Quibusdam pariatur sapiente doloremque?
+          OGS is a comprehensive app designed to transform institutes into
+          digital campuses. It offers real-time bus tracking, campus navigation,
+          and instant updates on campus events. With OGS, we aim to enhance
+          connectivity and convenience, making campus life more efficient and
+          engaging for students and staff alike. Embrace the future with our
+          all-in-one digital campus solution.
         </p>
       </div>
       <div>
         <Title title="CONTACT US" />
         <div className="pl-4 flex flex-col gap-2 font-semibold text-gray-500 tracking-wide">
-          <Link href={"tel:"}>+123456789</Link>
-          <Link href={"tel:"}>+123456789</Link>
-          <Link href={"tel:"}>+123456789</Link>
+          <Link href={"tel:+919656584346"}>9656584346</Link>
         </div>
       </div>
       <div>
         <Title title="FOLLOW US ON" />
         <div className="pl-4 flex flex-col gap-3">
-          <Link href={""} className="flex items-center gap-2 font-semibold">
+          <Link
+            href={"https://www.instagram.com/ogsofficial.in"}
+            className="flex items-center gap-2 font-semibold"
+          >
             <FaInstagram size={25} /> Instagram
           </Link>
-          <Link href={""} className="flex items-center gap-2 font-semibold">
+          <Link
+            href={"https://www.linkedin.com/company/own-guide-system-ogs/"}
+            className="flex items-center gap-2 font-semibold"
+          >
             <FaLinkedin size={25} /> Linked in
           </Link>
         </div>
