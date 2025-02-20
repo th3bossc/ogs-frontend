@@ -3,8 +3,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getVenues } from "@/lib/venues";
 import { Venue } from "@/types";
+import Potraitcard from "@/components/Card/Potraitcard";
+import Link from "next/link";
 
-const venuepage = ({title="oat", descr="OAT in NITC",imgv="https://placehold.co/382x220",details = {"Feb 21" : [1,2,3] ,"Feb 22nd" : [1,2],"Feb 23rd" : [1]}}) => {
+const Venuepage = ({title="oat", descr="OAT in NITC",imgv="https://placehold.co/382x220",details = {"Feb 21" : [1,2,3] ,"Feb 22nd" : [1,2],"Feb 23rd" : [1]},location}) => {
   const [venues, setVenues] = useState<Venue[]>([]);
   const [active, setActive] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -24,7 +26,7 @@ const venuepage = ({title="oat", descr="OAT in NITC",imgv="https://placehold.co/
 
     fetchVenues();
   }, []);
-  
+  console.log("hi",location);
   return (
     <>
     <div className="w-full h-[11vh] mt-4 px-4 ">
@@ -32,7 +34,7 @@ const venuepage = ({title="oat", descr="OAT in NITC",imgv="https://placehold.co/
         <div className="text-xl text-white opacity-[41%] font-semibold flex items-end">{descr}</div>
     </div>
     <div className="w-full flex justify-center mb-4">
-        <div className="w-[90%] h-[23vh] flex justify-center items-center border-2 rounded-3xl border-white overflow-hidden">
+        <div className="w-[90%] h-[23vh] flex justify-center items-center rounded-3xl overflow-hidden">
             <img src={imgv} className="rounded-3xl" />
         </div>
     </div>
@@ -54,19 +56,33 @@ const venuepage = ({title="oat", descr="OAT in NITC",imgv="https://placehold.co/
         </div>
         <div>
             {details[detailss].map((event, index) => (
-                <div key={index} className="w-full h-[10vh] flex justify-between items-center border-b-2 border-[#D9D9D9]">
-                    <div className="flex items-center">
-                        <span className="text-white text-[1.2rem] font-semibold">Event {event}</span>
-                    </div>
-                    <div className="flex items-center">
-                        <span className="text-white text-[1.2rem] font-semibold">Time</span>
-                    </div>
+                <div key={index} className="w-full flex justify-between items-center">
+                    <Potraitcard />
                 </div>
             ))}
         </div>
+        <div className="mt-4">
+  <div className="text-3xl text-white font-semibold mb-1">Location</div>
+
+  {/* Flexbox for inline arrangement */}
+  <div className="flex items-center justify-between w-full ">
+    {/* Left side: Emoji + Text */}
+    <div className="flex items-center space-x-2">
+      <div className="text-4xl ">📍</div>
+      <div className="opacity-[41%] text-xl font-semibold max-w-[50vw] overflow-hidden">
+        Hi hello hi hello hello hello
+      </div>
+    </div>
+
+    {/* Right side: Button */}
+    <div className="text-2xl font-semibold bg-[#FFCC00] rounded-xl py-2 px-4 text-black ">
+      <Link href={location}>Start</ Link>
+    </div>
+  </div>
+</div>
     </div>
     </>
   )
 }
 
-export default venuepage
+export default Venuepage
