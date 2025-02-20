@@ -34,7 +34,7 @@ const VenueCard = ({ name, image }: VenueCardProps) => {
     };
 
     getAllEvents();
-  }, []);
+  }, [name]);
 
   return (
     <>
