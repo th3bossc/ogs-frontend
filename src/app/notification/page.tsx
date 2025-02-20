@@ -7,7 +7,7 @@ import { getNotifications } from "@/lib/notifications";
 import { Notification } from "@/types";
 import { useEffect, useState } from "react";
 
-export default function page() {
+export default function Home() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   useEffect(() => {
