@@ -11,7 +11,7 @@ const CarouselAd = () => {
   ];
 
   return (
-    <div className="bg-black p-4 h-[150px]">
+    <div className="bg-black py-4 h-[200px]">
       <Swiper
         spaceBetween={15}
         slidesPerView={1.2}
