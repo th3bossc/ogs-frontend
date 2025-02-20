@@ -21,25 +21,25 @@ export default function Home() {
 
   return (
     <>
-      <Section>
-        <div>
-          <Title title="Notifications" />
-          <ul className="flex flex-col gap-2">
-            {notifications.map((notification, idx) => (
-              <div key={idx} className="p-4 flex items-center gap-2">
-                <p>{notification.details}</p>
-                <span className="text-nowrap font-semibold text-gray-500">
-                  {new Date(notification.time).toLocaleTimeString("en-US", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: true,
-                  })}
-                </span>
-              </div>
-            ))}
-          </ul>
-        </div>
-      </Section>
+        <Section className="flex-grow min-h-screen">
+          <div>
+            <Title title="Notifications"/>
+            <ul className="flex flex-col gap-2">
+              {notifications.map((notification, idx) => (
+                <div key={idx} className="p-4 flex items-center gap-2">
+                  <p>{notification.details}</p>
+                  <span className="text-nowrap font-semibold text-gray-500">
+                    {new Date(notification.time).toLocaleTimeString("en-US", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: true,
+                    })}
+                  </span>
+                </div>
+              ))}
+            </ul>
+          </div>
+        </Section>
     </>
   );
 }
