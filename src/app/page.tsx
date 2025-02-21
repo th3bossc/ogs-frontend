@@ -18,7 +18,7 @@ import { use, useEffect, useMemo, useState } from "react";
 
 export default function Home() {
   const [showAll, setShowAll] = useState<boolean>(false);
-  const [venues, setVenues] = useState<Venue[]>([]) 
+  const [venues, setVenues] = useState<Venue[]>([]);
 
   const heroSectionLInks = useMemo(
     () => [
@@ -57,11 +57,10 @@ export default function Home() {
     const getAllVenues = async () => {
       const venues = await getVenues();
       setVenues(venues);
-    }
+    };
 
-
-    getAllVenues()
-  }, [])
+    getAllVenues();
+  }, []);
 
   return (
     <Container>
@@ -78,7 +77,11 @@ export default function Home() {
           <Title title="Venues" />
         </div>
         {venues.slice(0, showAll ? venues.length : 1).map((venue, idx) => (
-          <VenueCard key={idx} name={venue.name} image={venue.image || "#"} />
+          <VenueCard
+            key={idx}
+            name={venue.name}
+            image={"/tmp/amphi-temp.jpg"}
+          />
         ))}
         <div className="flex justify-center -translate-y-4">
           <button

@@ -1,3 +1,8 @@
+import { getEvents } from "@/lib/events";
+import { Event } from "@/types";
+import { resolve } from "path";
+import { useEffect, useState } from "react";
+
 interface VenueCardProps {
   name: string;
   image: string;
@@ -6,6 +11,31 @@ interface VenueCardProps {
 const dummyEvents = ["Prodezza", "I-ink", "Informals", "Proshow"];
 
 const VenueCard = ({ name, image }: VenueCardProps) => {
+  const [events, setEvents] = useState<Event[]>([]);
+
+  useEffect(() => {
+    const getAllEvents = async () => {
+      const response = await getEvents();
+      console.log(response);
+
+      const selectedEvents = response.filter(
+        (event) => event.venue.name === name
+      );
+
+      const activeEvents = selectedEvents
+        .filter((event) => event.completed === true)
+        .sort((a, b) => {
+          if (a.priority && !b.priority) return -1;
+          if (!a.priority && b.priority) return 1;
+          return new Date(a.date).getTime() - new Date(b.date).getTime();
+        });
+
+      setEvents(activeEvents);
+    };
+
+    getAllEvents();
+  }, [name]);
+
   return (
     <>
       <div className="relative w-fit my-6">
@@ -25,9 +55,9 @@ const VenueCard = ({ name, image }: VenueCardProps) => {
             Events
           </span>
           <ul>
-            {dummyEvents.map((event, idx) => (
+            {events.map((event, idx) => (
               <li key={idx}>
-                {event}
+                {event.title}
                 {idx !== dummyEvents.length - 1 && (
                   <div className="border-t border-white"></div>
                 )}

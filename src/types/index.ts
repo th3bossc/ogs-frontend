@@ -6,6 +6,7 @@ export interface Event {
     date: Date,
     image?: string,
     priority: boolean,
+    completed: boolean;
 }
 
 export interface Venue {
@@ -53,6 +54,7 @@ export interface EventData {
     date: string,
     image?: ImageData,
     priority: boolean,
+    completed: boolean;
 }
 
 export interface WorkshopData {

@@ -36,6 +36,7 @@ export const formatEvent = (event: EventData): Event => {
         date: new Date(event.date),
         image: formatImage(event.image),
         priority: event.priority,
+        completed: event.completed,
     })
 }
 
