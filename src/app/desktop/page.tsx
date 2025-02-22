@@ -62,7 +62,7 @@ const VerticalCarousel = () => {
   );
 };
 
-const Dummy = ({ event }: { event: Event }) => {
+const Dummy = ({ event }: { event: any }) => {
   const monthNamesShort = [
     "Jan",
     "Feb",
@@ -91,27 +91,20 @@ const Dummy = ({ event }: { event: Event }) => {
         <div className="flex gap-3 ">
           <div className="transy scale-75 w-fit rounded-lg overflow-hidden bg-white text-black text-center shadow-md">
             <div className="px-4 text-lg bg-gray-600 text-white font-medium">
-              {monthNamesShort[event.date.getMonth()]}
+              {"Feb"}
             </div>
             <div className="px-4 text-2xl font-extrabold">
-              {event.date.getDate()}
+              {"22"}
             </div>
-            <div className="px-4 text-sm">{event.date.getUTCDay()}</div>
+            <div className="px-4 text-sm">{"Sat"}</div>
           </div>
           <div className="flex flex-col justify-end items-start">
             <span>Venue</span>
-            <span className="text-sm text-white/60">{event.venue.name}</span>
+            <span className="text-sm text-white/60">{"Proshow Stage"}</span>
           </div>
           <div className="flex items-end">
             <span className="text-white text-sm">
-              {new Date(`1970-01-01T${event.time}`).toLocaleTimeString(
-                "en-US",
-                {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: true,
-                }
-              )}
+              {event.time}
             </span>
           </div>
         </div>
@@ -119,6 +112,11 @@ const Dummy = ({ event }: { event: Event }) => {
     </div>
   );
 };
+
+const priorityEvents = [
+  {image: "/ogs/eve1.png", title: "", time: "8:00 PM"},
+  {image: "/ogs/eve2.png", title: "", time: "10:00 PM"},
+]
 
 export default function Home() {
   const [priorities, setPriorities] = useState<Event[]>([]);
@@ -146,7 +144,7 @@ export default function Home() {
             spaceBetween={20}
             loop={true}
             autoplay={{
-              delay: 3000,
+              delay: 10000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
@@ -154,7 +152,7 @@ export default function Home() {
             modules={[Autoplay, Navigation]}
             className="mySwiper"
           >
-            {priorities.map((priority, index) => (
+            {priorityEvents.map((priority, index) => (
               <SwiperSlide key={index}>
                 <Dummy event={priority} />
               </SwiperSlide>
