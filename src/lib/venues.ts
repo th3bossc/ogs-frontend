@@ -15,7 +15,7 @@ import { Venue, VenueData } from '@/types';
 export const getVenues = async (): Promise<Venue[]> => {
     const venues = await axios.get<{
         data: VenueData[]
-    }>(`${backendUrl}/api/venues`)
+    }>(`${backendUrl}/api/venues?pagination[limit]=100`)
     const formattedVenueData = formatVenues(venues.data.data)
     return formattedVenueData;
 }

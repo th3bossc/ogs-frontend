@@ -23,7 +23,7 @@ const VenueCard = ({ name, image }: VenueCardProps) => {
       );
 
       const activeEvents = selectedEvents
-        .filter((event) => event.completed === true)
+        .filter((event) => event.completed === false)
         .sort((a, b) => {
           if (a.priority && !b.priority) return -1;
           if (!a.priority && b.priority) return 1;
@@ -31,6 +31,8 @@ const VenueCard = ({ name, image }: VenueCardProps) => {
         });
 
       setEvents(activeEvents);
+
+      console.log(activeEvents);
     };
 
     getAllEvents();

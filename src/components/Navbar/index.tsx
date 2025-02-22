@@ -16,6 +16,8 @@ const Navbar = () => {
     [router]
   );
 
+  console.log(pathname);
+
   return (
     <nav className="px-6 py-1 w-full h-20 flex items-center justify-between bg-[linear-gradient(to_left,#facc15_10px,#000_120px)]">
       <Link href={"/"}>
@@ -29,6 +31,27 @@ const Navbar = () => {
           className="bg-transparent text-white min-w-[100px] outline-none placeholder-gray-300"
         />
       </div> */}
+
+      <div className="hidden md:flex justify-center gap-4 text-gray-500">
+        <Link
+          className={`py-4 ${
+            (pathname === "/" || pathname === "/desktop") &&
+            "border-b-2 border-yellow-500"
+          }`}
+          href={"/"}
+        >
+          HOME
+        </Link>
+        <Link className={`py-4`} href={"/about"}>
+          ABOUT US
+        </Link>
+        <Link className={`py-4`} href={"/contact"}>
+          CONTACT US
+        </Link>
+        <Link className={`py-4`} href={"/login"}>
+          SIGN IN
+        </Link>
+      </div>
 
       <div className="flex items-center gap-3">
         <Link href={"/notification"}>
