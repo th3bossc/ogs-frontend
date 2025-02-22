@@ -24,7 +24,6 @@ const VerticalCarousel = () => {
     { id: 5, image: "/ogs/5.jpg" },
     { id: 6, image: "/ogs/6.jpeg" },
     { id: 7, image: "/ogs/7.jpeg" },
-    { id: 8, image: "/ogs/8.jpeg" },
     { id: 9, image: "/ogs/9.png" },
   ];
 
@@ -114,8 +113,9 @@ const Dummy = ({ event }: { event: any }) => {
 };
 
 const priorityEvents = [
-  {image: "/ogs/eve2.png", title: "", time: "8:00 PM"},
-  {image: "/ogs/eve1.png", title: "", time: "10:00 PM"},
+  {image: "/ogs/eve2.png", title: "Proshow", time: "8:00 PM"},
+  {image: "/ogs/eve1.png", title: "Proshow", time: "10:00 PM"},
+  {image: "/ogs/eve3.png", title: "Choreo Night", time: "12:00 AM"},
 ]
 
 export default function Home() {
@@ -144,7 +144,7 @@ export default function Home() {
             spaceBetween={20}
             loop={true}
             autoplay={{
-              delay: 10000,
+              delay: 4000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
