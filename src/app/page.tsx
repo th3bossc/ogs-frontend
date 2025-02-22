@@ -80,7 +80,7 @@ export default function Home() {
           <VenueCard
             key={idx}
             name={venue.name}
-            image={"/tmp/amphi-temp.jpg"}
+            image={venue.image}
           />
         ))}
         <div className="flex justify-center -translate-y-4">
