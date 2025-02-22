@@ -32,7 +32,7 @@ const Dummy = ({ event }: { event: Event }) => {
   return (
     <>
       <div className="relative">
-        <img src={"/tmp/artist.png"} alt="" className="w-full" />
+        <img src={event.image} alt="" className="w-full" />
         <div className="absolute inset-0 bg-[linear-gradient(to_top,#230133_25%,transparent_50%)]"></div>
         <div className="z-20 p-2 absolute bottom-0 text-white">
           <span className="text-2xl">{event.title}</span>
