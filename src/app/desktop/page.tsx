@@ -114,8 +114,8 @@ const Dummy = ({ event }: { event: any }) => {
 };
 
 const priorityEvents = [
-  {image: "/ogs/eve1.png", title: "", time: "8:00 PM"},
-  {image: "/ogs/eve2.png", title: "", time: "10:00 PM"},
+  {image: "/ogs/eve2.png", title: "", time: "8:00 PM"},
+  {image: "/ogs/eve1.png", title: "", time: "10:00 PM"},
 ]
 
 export default function Home() {
