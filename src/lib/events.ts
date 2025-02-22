@@ -17,7 +17,7 @@ import { formatEvents } from './format-data';
  */
 export const getEvents = async (venueName?: string): Promise<Event[]> => {
     if (venueName) {
-        const response = await axios.get<{ data: VenueData[] }>(`${backendUrl}/api/venues?pagination[limit]=100`);
+        const response = await axios.get<{ data: VenueData[] }>(`${backendUrl}/api/venues`);
         console.log(response.data)
         const searchedVenue = response.data.data.filter(data => data.name === venueName);
         if (searchedVenue.length === 0)
@@ -26,7 +26,7 @@ export const getEvents = async (venueName?: string): Promise<Event[]> => {
         return formatEvents(searchedVenue[0].events)
     }
     else {
-        const response = await axios.get<{ data: EventData[] }>(`${backendUrl}/api/events?pagination[limit]=100`);
+        const response = await axios.get<{ data: EventData[] }>(`${backendUrl}/api/events`);
         console.log(response.data)
         return formatEvents(response.data.data);
     }
