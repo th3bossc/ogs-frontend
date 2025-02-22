@@ -98,11 +98,9 @@ export default function Home() {
       <div className="my-8"></div>
 
       <Section>
-        <div className="flex justify-between">
+        <div className="flex">
           <Title title="Just for you" />
-          <Link href="/see-more" className="text-blue-400">
-            see more
-          </Link>
+          
         </div>
         <div>
           <CarouselAd />
