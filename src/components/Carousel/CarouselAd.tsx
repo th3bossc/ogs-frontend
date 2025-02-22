@@ -11,6 +11,9 @@ const CarouselAd = () => {
     { id: 4, bgColor: "bg-green-500", text: "#AD-3", image: "ogs/4.png" },
     { id: 5, bgColor: "bg-green-500", text: "#AD-3", image: "ogs/5.jpg" },
     { id: 6, bgColor: "bg-green-500", text: "#AD-3", image: "ogs/6.jpeg" },
+    { id: 7, bgColor: "bg-green-500", text: "#AD-3", image: "ogs/7.jpeg" },
+    { id: 8, bgColor: "bg-green-500", text: "#AD-3", image: "ogs/8.jpeg" },
+    { id: 9, bgColor: "bg-green-500", text: "#AD-3", image: "ogs/9.png" },
   ];
 
   return (
@@ -20,6 +23,11 @@ const CarouselAd = () => {
         slidesPerView={1.2}
         centeredSlides={true}
         loop={true}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
       >
         {ads.map((ad) => (
           <SwiperSlide
