@@ -145,7 +145,6 @@ export default function Home() {
             autoplay={{
               delay: 2000,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true,
             }}
             navigation={false}
             modules={[Autoplay, Navigation]}
