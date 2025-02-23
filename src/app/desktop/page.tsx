@@ -117,6 +117,7 @@ const priorityEvents = [
   {image: "/ogs/disc.png", title: "PROMO", time: "08:00 PM", venue: "Proshow Stage"},
   {image: "/ogs/evee2.jpg", title: "Proshow", time: "10:00 PM", venue: "Proshow Stage"},
   {image: "/ogs/disc1.png", title: "PROMO", time: "08:00 PM", venue: "Proshow Stage"},
+  {image: "/ogs/eveve1.jpg", title: "PROMO", time: "08:00 PM", venue: "Proshow Stage"},
 ]
 
 export default function Home() {
