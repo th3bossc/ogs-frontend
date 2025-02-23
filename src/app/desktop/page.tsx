@@ -141,7 +141,8 @@ export default function Home() {
       <div className="flex gap-8">
         <div className="w-full">
           <Swiper
-            slidesPerView={1}
+            slidesPerView={1.2}
+            centeredSlides={true}
             spaceBetween={20}
             loop={true}
             autoplay={{
