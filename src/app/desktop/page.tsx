@@ -114,13 +114,9 @@ const Dummy = ({ event }: { event: any }) => {
 
 const priorityEvents = [
   {image: "/ogs/evee1.jpg", title: "Proshow", time: "8:00 PM", venue: "Proshow Stage"},
+  {image: "/ogs/disc.png", title: "PROMO", time: "08:00 PM", venue: "Proshow Stage"},
   {image: "/ogs/evee2.jpg", title: "Proshow", time: "10:00 PM", venue: "Proshow Stage"},
-  {image: "/ogs/cmus.png", title: "Competition", time: "01:00 PM", venue: "Aryabhatta hall"},
- {image: "/ogs/csi.png", title: "Competition", time: "10:00 AM", venue: "ELHC 201"},
- {image: "/ogs/impr.png", title: "Competition", time: "03:00 PM", venue: "DB 301"},
- {image: "/ogs/sket.png", title: "Competition", time: "03:00 PM", venue: "DB 306"},
- {image: "/ogs/tstm.png", title: "Competition", time: "02:00 PM", venue: "ELHC PITS"},
-
+  {image: "/ogs/disc1.png", title: "PROMO", time: "08:00 PM", venue: "Proshow Stage"},
 ]
 
 export default function Home() {
