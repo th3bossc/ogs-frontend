@@ -93,9 +93,9 @@ const Dummy = ({ event }: { event: any }) => {
               {"Feb"}
             </div>
             <div className="px-4 text-2xl font-extrabold">
-              {"22"}
+              {"23"}
             </div>
-            <div className="px-4 text-sm">{"Sat"}</div>
+            <div className="px-4 text-sm">{"Sun"}</div>
           </div>
           <div className="flex flex-col justify-end items-start">
             <span>Venue</span>
