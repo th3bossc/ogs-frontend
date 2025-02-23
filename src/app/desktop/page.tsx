@@ -99,7 +99,7 @@ const Dummy = ({ event }: { event: any }) => {
           </div>
           <div className="flex flex-col justify-end items-start">
             <span>Venue</span>
-            <span className="text-sm text-white/60">{"Proshow Stage"}</span>
+            <span className="text-sm text-white/60">{event.venue || "Proshow Stage"}</span>
           </div>
           <div className="flex items-end">
             <span className="text-white text-sm">
@@ -113,9 +113,8 @@ const Dummy = ({ event }: { event: any }) => {
 };
 
 const priorityEvents = [
-  {image: "/ogs/eve2.png", title: "Proshow", time: "8:00 PM"},
-  {image: "/ogs/eve1.png", title: "Proshow", time: "10:00 PM"},
-  {image: "/ogs/eve3.png", title: "Choreo Night", time: "12:00 AM"},
+  {image: "/ogs/evee1.jpg", title: "Proshow", time: "8:00 PM", venue: ""},
+  {image: "/ogs/evee2.jpg", title: "Proshow", time: "10:00 PM", venue: ""},
 ]
 
 export default function Home() {
@@ -144,7 +143,7 @@ export default function Home() {
             spaceBetween={20}
             loop={true}
             autoplay={{
-              delay: 4000,
+              delay: 2000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
