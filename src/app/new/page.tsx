@@ -29,7 +29,7 @@ const CountdownTimer = ({ targetHour, targetMinute }: { targetHour: number, targ
     }, []);
   
     return (
-      <div className="text-center text-5xl font-bold">
+      <div className="text-center text-9xl font-bold">
         {timeLeft.hours}:{timeLeft.minutes.toString().padStart(2, "0")}:
         {timeLeft.seconds.toString().padStart(2, "0")}
       </div>
@@ -43,7 +43,7 @@ export default function New () {
                 <p className="text-6xl font-bold">Ragam Pass</p>
                 <p className="text-8xl">Offer closes soon</p>
             </div>
-            <CountdownTimer targetHour={17} targetMinute={15} /></div>
+            <CountdownTimer targetHour={17} targetMinute={45} /></div>
             
         </>
     );
