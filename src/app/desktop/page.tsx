@@ -135,7 +135,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="mx-[3%] h-[80vh]">
+    <main className="mx-[10%] h-[80vh]">
       <Title title="Event Updates" />
       <div className="my-8"></div>
       <div className="flex gap-8">
