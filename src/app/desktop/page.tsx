@@ -146,7 +146,7 @@ export default function Home() {
             spaceBetween={20}
             loop={true}
             autoplay={{
-              delay: 4000,
+              delay: 5000,
               disableOnInteraction: false,
             }}
             navigation={false}
