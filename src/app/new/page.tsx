@@ -43,7 +43,7 @@ export default function New () {
                 <p className="text-6xl font-bold">Ragam Pass</p>
                 <p className="text-8xl">Offer closes soon</p>
             </div>
-            <CountdownTimer targetHour={17} targetMinute={0} /></div>
+            <CountdownTimer targetHour={17} targetMinute={15} /></div>
             
         </>
     );
