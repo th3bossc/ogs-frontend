@@ -139,13 +139,13 @@ export default function Home() {
       <Title title="Event Updates" />
       <div className="my-8"></div>
       <div className="flex gap-8">
-        <div className="w-[70vw]">
+        <div className="w-full">
           <Swiper
             slidesPerView={1}
             spaceBetween={20}
             loop={true}
             autoplay={{
-              delay: 2000,
+              delay: 4000,
               disableOnInteraction: false,
             }}
             navigation={false}
@@ -159,7 +159,7 @@ export default function Home() {
             ))}
           </Swiper>
         </div>
-        <VerticalCarousel />
+        {/* <VerticalCarousel /> */}
       </div>
     </main>
   );
