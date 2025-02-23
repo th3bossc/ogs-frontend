@@ -29,7 +29,7 @@ const CountdownTimer = ({ targetHour, targetMinute }: { targetHour: number, targ
     }, []);
   
     return (
-      <div className="text-center text-3xl font-bold">
+      <div className="text-center text-5xl font-bold">
         {timeLeft.hours}:{timeLeft.minutes.toString().padStart(2, "0")}:
         {timeLeft.seconds.toString().padStart(2, "0")}
       </div>
